@@ -55,7 +55,7 @@ const CapsuleItem = ({ item, modalControl, modalDataControl }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={handleClick} size="small">
+        <Button sx={{ color: "#FFF" }} onClick={handleClick} size="small">
           Show Details
         </Button>
       </CardActions>
