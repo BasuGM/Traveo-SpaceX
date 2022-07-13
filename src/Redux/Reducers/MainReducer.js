@@ -1,25 +1,20 @@
+import { ActionTypes } from "../Actions/ActionTypes";
+
 const initialState = {
-    isLoading: false,
-  };
-  
-  const MainReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'LOADER_TRUE':
-        return {
-          ...state,
-          isLoading: true,
-        };
-  
-      case 'LOADER_FALSE':
-        return {
-          ...state,
-          isLoading: false,
-        };
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default MainReducer;
-  
+  userArray: []
+};
+
+const MainReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ActionTypes.ADD_USER:
+      return {
+        ...state,
+        userArray: [...state.userArray, action.payload],
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default MainReducer;

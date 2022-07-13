@@ -1,23 +1,18 @@
-import logo from "./logo.svg";
+// CSS
 import "./App.css";
+
+// Router Dom
 import { Route, Routes } from "react-router-dom";
+
+// Pages
 import Home from "./Pages/Home";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
-
-  const state = useSelector(state => state)
-
-  useEffect(() => {
-
-    console.log('state')
-    console.log(JSON.stringify(state, null, 4))
-  }, [])
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/Dashboard" element={<Dashboard />} />
     </Routes>
   );
 }
