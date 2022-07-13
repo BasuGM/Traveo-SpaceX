@@ -106,6 +106,19 @@ function Dashboard() {
           </List>
         </Box>
         <Box sx={{ flex: 2, border: "0px solid red" }}></Box>
+        <Box
+          component="img"
+          sx={{
+            position: 'fixed',
+            right: '-320px',
+            bottom: '0px',
+            zIndex: 100,
+            height: window.innerHeight * 0.9,
+          }}
+          alt="The house from the offer."
+          resizeMode='cover'
+          src="https://wallpapercave.com/wp/wp2284535.jpg"
+        />
       </Container>
 
       <DetailModal
