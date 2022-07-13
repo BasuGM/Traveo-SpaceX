@@ -11,6 +11,8 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { useNavigate } from "react-router-dom";
+import { UserLogout } from "../Redux/Actions/MainActions";
 
 const NavigationBar = ({
   filter,
@@ -20,6 +22,8 @@ const NavigationBar = ({
   endDate,
   setEndDate,
 }) => {
+  const navigate = useNavigate()
+
   const handleChange = (e) => {
     setFilter(e.target.value);
   };
@@ -31,6 +35,11 @@ const NavigationBar = ({
   const handleEndDate = (e) => {
     setEndDate(e);
   };
+
+  const handleLogout = () => {
+    navigate('/')
+    UserLogout()
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -103,7 +112,7 @@ const NavigationBar = ({
             <MenuItem value={"Date Range"}>Date Range</MenuItem>
           </Select>
 
-          <Button color="inherit">Logout</Button>
+          <Button onClick={handleLogout} color="inherit">Logout</Button>
         </Toolbar>
       </AppBar>
     </Box>

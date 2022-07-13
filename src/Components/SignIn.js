@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Snackbar } from "@mui/material";
+import { UserLogin } from "../Redux/Actions/MainActions";
 
 const SignIn = () => {
   const [open, setOpen] = React.useState(false);
@@ -35,6 +36,7 @@ const SignIn = () => {
     if (loginSuccess) {
       setOpen(true);
       setSnackBarText("Login Successful!");
+      UserLogin(data.get("email"))
       setTimeout(() => {
         setOpen(false);
         navigate("/Dashboard");
